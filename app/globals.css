@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+/* Salesforce Lightning Design System Tokens */
+:root {
+  /* Brand Colors */
+  --sf-blue: #0176d3;
+  --sf-blue-dark: #014486;
+  --sf-blue-light: #1b96ff;
+  --sf-nav-blue: #032d60;
+
+  /* Backgrounds */
+  --sf-page-bg: #f3f3f3;
+  --sf-card-bg: #ffffff;
+  --sf-header-bg: #0176d3;
+
+  /* Borders */
+  --sf-border: #e5e5e5;
+  --sf-border-dark: #c9c9c9;
+
+  /* Text */
+  --sf-text-primary: #181818;
+  --sf-text-secondary: #444444;
+  --sf-text-muted: #706e6b;
+  --sf-text-inverse: #ffffff;
+  --sf-text-link: #0176d3;
+
+  /* Status Colors */
+  --sf-success: #2e844a;
+  --sf-success-light: #e6f5ea;
+  --sf-warning: #fe9339;
+  --sf-warning-light: #fef4e8;
+  --sf-error: #ea001e;
+  --sf-error-light: #fde8ea;
+  --sf-info: #0176d3;
+  --sf-info-light: #e5f2fd;
+
+  /* Badge Colors */
+  --sf-badge-draft: #ecebea;
+  --sf-badge-draft-text: #444444;
+  --sf-badge-submitted: #0176d3;
+  --sf-badge-review: #fe9339;
+  --sf-badge-approved: #2e844a;
+  --sf-badge-returned: #ea001e;
+
+  /* Rating Colors */
+  --sf-getting-started: #0176d3;
+  --sf-progressing: #fe9339;
+  --sf-achieving: #2e844a;
+
+  /* Spacing */
+  --sf-header-height: 44px;
+  --sf-nav-height: 40px;
+
+  /* Shadows */
+  --sf-shadow-card: 0 2px 2px rgba(0, 0, 0, 0.05);
+  --sf-shadow-dropdown: 0 2px 8px rgba(0, 0, 0, 0.16);
+  --sf-shadow-modal: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+  /* Font */
+  --sf-font: "Salesforce Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@theme inline {
+  --color-sf-blue: var(--sf-blue);
+  --color-sf-blue-dark: var(--sf-blue-dark);
+  --color-sf-blue-light: var(--sf-blue-light);
+  --color-sf-nav-blue: var(--sf-nav-blue);
+  --color-sf-page-bg: var(--sf-page-bg);
+  --color-sf-card-bg: var(--sf-card-bg);
+  --color-sf-border: var(--sf-border);
+  --color-sf-border-dark: var(--sf-border-dark);
+  --color-sf-text-primary: var(--sf-text-primary);
+  --color-sf-text-secondary: var(--sf-text-secondary);
+  --color-sf-text-muted: var(--sf-text-muted);
+  --color-sf-text-link: var(--sf-text-link);
+  --color-sf-success: var(--sf-success);
+  --color-sf-success-light: var(--sf-success-light);
+  --color-sf-warning: var(--sf-warning);
+  --color-sf-warning-light: var(--sf-warning-light);
+  --color-sf-error: var(--sf-error);
+  --color-sf-error-light: var(--sf-error-light);
+  --color-sf-info: var(--sf-info);
+  --color-sf-info-light: var(--sf-info-light);
+  --font-sf: var(--sf-font);
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--sf-font);
+  font-size: 13px;
+  color: var(--sf-text-primary);
+  background: var(--sf-page-bg);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Salesforce Lightning Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Lightning Tooltip */
+.sf-tooltip {
+  position: relative;
+}
+
+.sf-tooltip-content {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--sf-nav-blue);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: normal;
+  width: max-content;
+  max-width: 300px;
+  z-index: 9999;
+  transition: opacity 0.15s ease;
+  box-shadow: var(--sf-shadow-dropdown);
+}
+
+.sf-tooltip-content::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--sf-nav-blue) transparent transparent transparent;
+}
+
+.sf-tooltip:hover .sf-tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}
